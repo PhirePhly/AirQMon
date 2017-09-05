@@ -31,6 +31,8 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:AirQMon
+LIBS:AirQMon-cache
 EELAYER 25 0
 EELAYER END
 $Descr A 11000 8500
@@ -260,7 +262,7 @@ U 1 1 59ADE56D
 P 6200 1350
 F 0 "U?" H 6000 1875 50  0000 R CNN
 F 1 "MCP3008" H 6000 1800 50  0000 R CNN
-F 2 "" H 6300 1450 50  0001 C CNN
+F 2 "Housings_DIP:DIP-16_W7.62mm" H 6300 1450 50  0001 C CNN
 F 3 "" H 6300 1450 50  0001 C CNN
 	1    6200 1350
 	1    0    0    -1  
@@ -514,4 +516,250 @@ Wire Wire Line
 	5600 1650 5500 1650
 Wire Wire Line
 	5500 1550 5600 1550
+$Comp
+L BME280 U?
+U 1 1 59AE1B2B
+P 1150 1450
+F 0 "U?" H 1050 1900 50  0000 C CNN
+F 1 "BME280" V 1100 1500 50  0000 C CNN
+F 2 "Connectors_Samtec:SL-106-X-XX_1x06" H 1150 1450 50  0001 C CNN
+F 3 "" H 1150 1450 50  0001 C CNN
+	1    1150 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR?
+U 1 1 59AE1CB8
+P 1650 1050
+F 0 "#PWR?" H 1650 900 50  0001 C CNN
+F 1 "+3.3V" H 1650 1190 50  0000 C CNN
+F 2 "" H 1650 1050 50  0001 C CNN
+F 3 "" H 1650 1050 50  0001 C CNN
+	1    1650 1050
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 59AE1CE8
+P 1650 1750
+F 0 "#PWR?" H 1650 1500 50  0001 C CNN
+F 1 "GND" H 1650 1600 50  0000 C CNN
+F 2 "" H 1650 1750 50  0001 C CNN
+F 3 "" H 1650 1750 50  0001 C CNN
+	1    1650 1750
+	1    0    0    -1  
+$EndComp
+Text GLabel 1650 1350 2    50   Input ~ 0
+SDA
+Text GLabel 1650 1250 2    50   Input ~ 0
+SCL
+NoConn ~ 1550 1550
+NoConn ~ 1550 1450
+Wire Wire Line
+	1650 1050 1650 1150
+Wire Wire Line
+	1650 1150 1550 1150
+Wire Wire Line
+	1550 1250 1650 1250
+Wire Wire Line
+	1650 1350 1550 1350
+Wire Wire Line
+	1650 1750 1650 1650
+Wire Wire Line
+	1650 1650 1550 1650
+$Comp
+L TGS2600 U?
+U 1 1 59AE220D
+P 1150 2800
+F 0 "U?" H 950 3100 50  0000 C CNN
+F 1 "TGS2600" V 950 2850 50  0000 C CNN
+F 2 "" H 1050 2800 50  0001 C CNN
+F 3 "" H 1050 2800 50  0001 C CNN
+	1    1150 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR?
+U 1 1 59AE22A3
+P 1650 2500
+F 0 "#PWR?" H 1650 2350 50  0001 C CNN
+F 1 "+5V" H 1650 2640 50  0000 C CNN
+F 2 "" H 1650 2500 50  0001 C CNN
+F 3 "" H 1650 2500 50  0001 C CNN
+	1    1650 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR?
+U 1 1 59AE230C
+P 1900 2500
+F 0 "#PWR?" H 1900 2350 50  0001 C CNN
+F 1 "+3.3V" H 1900 2640 50  0000 C CNN
+F 2 "" H 1900 2500 50  0001 C CNN
+F 3 "" H 1900 2500 50  0001 C CNN
+	1    1900 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1550 2600 1650 2600
+Wire Wire Line
+	1650 2600 1650 2500
+Wire Wire Line
+	1900 2500 1900 2800
+Wire Wire Line
+	1900 2800 1550 2800
+$Comp
+L R R?
+U 1 1 59AE241C
+P 1600 3100
+F 0 "R?" V 1680 3100 50  0000 C CNN
+F 1 "22k" V 1600 3100 50  0000 C CNN
+F 2 "" V 1530 3100 50  0001 C CNN
+F 3 "" H 1600 3100 50  0001 C CNN
+	1    1600 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 59AE24BF
+P 1800 3300
+F 0 "#PWR?" H 1800 3050 50  0001 C CNN
+F 1 "GND" H 1800 3150 50  0000 C CNN
+F 2 "" H 1800 3300 50  0001 C CNN
+F 3 "" H 1800 3300 50  0001 C CNN
+	1    1800 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1550 2700 1800 2700
+Wire Wire Line
+	1800 2700 1800 3300
+Wire Wire Line
+	1550 2900 1900 2900
+Wire Wire Line
+	1600 2900 1600 2950
+Wire Wire Line
+	1600 3250 1800 3250
+Connection ~ 1800 3250
+$Comp
+L GPS_Breakout U?
+U 1 1 59AE2905
+P 1250 4250
+F 0 "U?" H 1150 4600 50  0000 C CNN
+F 1 "GPS_Breakout" V 1150 4250 50  0000 C CNN
+F 2 "Connectors_Samtec:SL-105-X-XX_1x05" H 1150 4150 50  0001 C CNN
+F 3 "" H 1150 4150 50  0001 C CNN
+	1    1250 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR?
+U 1 1 59AE29C8
+P 1650 3950
+F 0 "#PWR?" H 1650 3800 50  0001 C CNN
+F 1 "+3.3V" H 1650 4090 50  0000 C CNN
+F 2 "" H 1650 3950 50  0001 C CNN
+F 3 "" H 1650 3950 50  0001 C CNN
+	1    1650 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1650 3950 1650 4050
+Wire Wire Line
+	1650 4050 1550 4050
+$Comp
+L GND #PWR?
+U 1 1 59AE2A69
+P 1650 4550
+F 0 "#PWR?" H 1650 4300 50  0001 C CNN
+F 1 "GND" H 1650 4400 50  0000 C CNN
+F 2 "" H 1650 4550 50  0001 C CNN
+F 3 "" H 1650 4550 50  0001 C CNN
+	1    1650 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1650 4550 1650 4450
+Wire Wire Line
+	1650 4450 1550 4450
+Text GLabel 1650 4250 2    50   Input ~ 0
+TXD
+Text GLabel 1650 4150 2    50   Input ~ 0
+RXD
+Text GLabel 1650 4350 2    50   Input ~ 0
+PPS
+Wire Wire Line
+	1550 4150 1650 4150
+Wire Wire Line
+	1550 4250 1650 4250
+Wire Wire Line
+	1550 4350 1650 4350
+Text Notes 700  850  0    50   ~ 0
+Temperature, humidity, and pressure sensor
+Text Notes 850  2250 0    50   ~ 0
+Air contaminants (CO,H,CH4, etc) sensor
+Text Notes 950  3700 0    50   ~ 0
+GPS receiver for location and time sync
+$Comp
+L RTC_hat U?
+U 1 1 59AE39A1
+P 1200 5500
+F 0 "U?" H 1100 5800 50  0000 C CNN
+F 1 "RTC_hat" V 1150 5500 50  0000 C CNN
+F 2 "Connectors_Samtec:SL-105-X-XX_1x05" H 1200 5500 50  0001 C CNN
+F 3 "" H 1200 5500 50  0001 C CNN
+	1    1200 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR?
+U 1 1 59AE3C04
+P 1600 5200
+F 0 "#PWR?" H 1600 5050 50  0001 C CNN
+F 1 "+3.3V" H 1600 5340 50  0000 C CNN
+F 2 "" H 1600 5200 50  0001 C CNN
+F 3 "" H 1600 5200 50  0001 C CNN
+	1    1600 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 59AE3C57
+P 1600 5800
+F 0 "#PWR?" H 1600 5550 50  0001 C CNN
+F 1 "GND" H 1600 5650 50  0000 C CNN
+F 2 "" H 1600 5800 50  0001 C CNN
+F 3 "" H 1600 5800 50  0001 C CNN
+	1    1600 5800
+	1    0    0    -1  
+$EndComp
+Text GLabel 1600 5500 2    50   Input ~ 0
+SCL
+Text GLabel 1600 5400 2    50   Input ~ 0
+SDA
+Wire Wire Line
+	1500 5500 1600 5500
+Wire Wire Line
+	1600 5400 1500 5400
+Wire Wire Line
+	1500 5300 1600 5300
+Wire Wire Line
+	1600 5300 1600 5200
+Wire Wire Line
+	1500 5700 1600 5700
+Wire Wire Line
+	1600 5700 1600 5800
+Text Notes 850  4950 0    50   ~ 0
+Real Time Clock Hat (DS3231)
+Text GLabel 1900 2900 2    50   Input ~ 0
+TGS_OUT
+Connection ~ 1600 2900
+Text GLabel 5500 1150 0    50   Input ~ 0
+TGS_OUT
+Wire Wire Line
+	5500 1150 5600 1150
+Text Notes 900  6250 0    50   ~ 0
+MICS-5414 NOX and CO
+Text Notes 3450 2850 0    50   ~ 0
+MIC Amplifier circuit
 $EndSCHEMATC
