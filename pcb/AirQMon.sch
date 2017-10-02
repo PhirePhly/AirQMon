@@ -759,7 +759,78 @@ TGS_OUT
 Wire Wire Line
 	5500 1150 5600 1150
 Text Notes 900  6250 0    50   ~ 0
-MICS-5414 NOX and CO
-Text Notes 3450 2850 0    50   ~ 0
-MIC Amplifier circuit
+MICS-4514 NOX and CO
+$Comp
+L MiCS-4514_BREAKOUT U?
+U 1 1 59D1B6E5
+P 1200 6900
+F 0 "U?" H 1100 7250 60  0000 C CNN
+F 1 "MiCS-4514_BREAKOUT" V 950 6900 60  0000 C CNN
+F 2 "" H 1200 6900 60  0001 C CNN
+F 3 "" H 1200 6900 60  0001 C CNN
+	1    1200 6900
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR?
+U 1 1 59D1B9C2
+P 1600 6600
+F 0 "#PWR?" H 1600 6450 50  0001 C CNN
+F 1 "+5V" H 1600 6740 50  0000 C CNN
+F 2 "" H 1600 6600 50  0001 C CNN
+F 3 "" H 1600 6600 50  0001 C CNN
+	1    1600 6600
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 59D1BAC4
+P 1600 7200
+F 0 "#PWR?" H 1600 6950 50  0001 C CNN
+F 1 "GND" H 1600 7050 50  0000 C CNN
+F 2 "" H 1600 7200 50  0001 C CNN
+F 3 "" H 1600 7200 50  0001 C CNN
+	1    1600 7200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1500 7100 1600 7100
+Wire Wire Line
+	1600 7100 1600 7200
+Wire Wire Line
+	1500 6700 1600 6700
+Wire Wire Line
+	1600 6700 1600 6600
+$Comp
+L Conn_01x01 J?
+U 1 1 59D1BC9C
+P 1950 7000
+F 0 "J?" H 1950 7100 50  0000 C CNN
+F 1 "NOX_PRE" H 1950 6900 50  0000 C CNN
+F 2 "" H 1950 7000 50  0001 C CNN
+F 3 "" H 1950 7000 50  0001 C CNN
+	1    1950 7000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1750 7000 1500 7000
+Text GLabel 1550 6800 2    50   Input ~ 0
+RED
+Text GLabel 1550 6900 2    50   Input ~ 0
+NOX
+Wire Wire Line
+	1500 6800 1550 6800
+Wire Wire Line
+	1500 6900 1550 6900
+Text GLabel 5500 1250 0    50   Input ~ 0
+RED
+Text GLabel 5500 1350 0    50   Input ~ 0
+NOX
+Wire Wire Line
+	5500 1250 5600 1250
+Wire Wire Line
+	5500 1350 5600 1350
+Text Notes 1800 7550 0    60   ~ 0
+I think this is the NOX sensor pre-heat input.\nI don't think you *have* to use it, so I'm just\nbringing it out on a pad to be able to get out\nof jail later
+NoConn ~ 5600 1450
 $EndSCHEMATC
