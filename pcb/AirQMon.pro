@@ -1,4 +1,4 @@
-update=Mon 04 Sep 2017 20:25:46 PDT
+update=Mon 11 Dec 2017 22:36:16 PST
 version=1
 last_client=kicad
 [pcbnew]
@@ -62,3 +62,4 @@ LibName30=atmel
 LibName31=contrib
 LibName32=valves
 LibName33=AirQMon
+LibName34=mechanical
